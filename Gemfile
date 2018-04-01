@@ -51,5 +51,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'better_errors'
   gem 'faker'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'factory_bot_rails'
 end
