@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'thor', '0.19.1'
 gem 'figaro'
+gem 'devise'
+gem 'bootstrap-sass'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -45,6 +47,7 @@ group :development do
   # Use sqlite3 as the development database for Active Record
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
+  gem 'listen'
 end
 
 group :development, :test do
