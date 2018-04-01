@@ -1,2 +1,10 @@
 <h1>Topics#new</h1>
 <p>Find me in app/views/topics/new.html.erb</p>
+<div class="row">
+  <div class="col-md-4">
+    <h3>New topic</h3>
+  </div>
+</div>
+<div class="col-md-8">
+  <%= render partial: 'form', locals: { topic: @topic } %>
+</div>
