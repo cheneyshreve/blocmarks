@@ -5,3 +5,11 @@
     <%= link_to "Delete", @topic, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this topic?' } %>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-8">
+      <h3>Bookmarks</h3>
+        <% @topic.bookmarks.each do |bookmark| %>
+          <p><%= bookmark.url %></p>
+        <% end %>
+    </div>
+</div>
