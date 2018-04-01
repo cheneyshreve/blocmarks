@@ -5,7 +5,6 @@ RSpec.describe TopicsController, type: :controller do
   let(:my_user) { User.create!(email:"bloc@bloc.com", password: "password", password_confirmation: "password") }
   let(:my_topic) { Topic.create!(user: my_user, title: "my topic") }
 
-
   describe "GET #index" do
     before(:each) do
        @request.env["devise.mapping"] = Devise.mappings[:user]
@@ -30,7 +29,7 @@ RSpec.describe TopicsController, type: :controller do
        sign_in user
     end
     it "returns http success" do
-      get :show, params: {id: my_topic.id, topic: {title: "my topic", user: my_user } }
+      get :show, params: {id: my_topic.id, topic: {title: "my topic", user_id: my_topic.user_id } }
       expect(response).to have_http_status(:success)
     end
   end
@@ -47,19 +46,6 @@ RSpec.describe TopicsController, type: :controller do
     end
   end
 
-  describe "POST create" do
-    before(:each) do
-       @request.env["devise.mapping"] = Devise.mappings[:user]
-       user = FactoryBot.create(:user)
-       sign_in user
-    end
-
-    it "assigns the new topic to @topic" do
-      post :create, params: { topic: {title: my_topic.title, user_id: my_topic.user_id } }
-      expect(response).to redirect_to(topic_path)
-    end
-
-  end
 
   describe "GET #edit" do
     before(:each) do
@@ -70,6 +56,19 @@ RSpec.describe TopicsController, type: :controller do
     it "returns http success" do
       get :edit, params: {id: my_topic.id }
       expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe "Post create" do
+    before(:each) do
+       @request.env["devise.mapping"] = Devise.mappings[:user]
+       user = FactoryBot.create(:user)
+       sign_in user
+    end
+
+    it "redirects back to the new topic" do
+      post :create, params: {id: my_topic.id, topic: {title: "my topic"}}
+      expect(response).to redirect_to(Topic.last)
     end
   end
 
