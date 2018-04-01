@@ -1,24 +1,12 @@
-# README
+## Blocmarks
+Blocmarks is an application that allows users to bookmark URLs via email, search other user's bookmarks and maintain a personal index of categorized bookmarks. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Languages and frameworks
+- Ruby 2.5
+- Rails 5.1.5
 
-Things you may want to cover:
+## Configuration
+- To be added, app is currently under development.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Setup & Installation
+- To be added, app is currently under development.
