@@ -6,7 +6,9 @@
             <%= link_to topic.title, topic %>
             <h4 class="media-heading">
               <% topic.bookmarks.each do |bookmark| %>
-                <p><%= bookmark.url %></p>
+                <div class="thumbnail">
+                  <%= bookmark.url %>
+                </div>
               <% end %>
             </h4>
       <% end %>
