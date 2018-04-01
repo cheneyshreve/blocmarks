@@ -72,4 +72,44 @@ RSpec.describe TopicsController, type: :controller do
     end
   end
 
+  describe "PUT update" do
+    before(:each) do
+       @request.env["devise.mapping"] = Devise.mappings[:user]
+       user = FactoryBot.create(:user)
+       sign_in user
+    end
+    it "updates topic with expected attributes" do
+      new_title = "new title"
+
+      put :update, params: { id: my_topic.id, topic: { title: new_title } }
+
+      updated_topic = assigns(:topic)
+      expect(updated_topic.title).to eq new_title
+    end
+
+    it "redirects to the updated topic" do
+      new_title = "new title"
+
+      put :update, params: { id: my_topic.id, topic: { title: new_title } }
+      expect(response).to redirect_to my_topic
+    end
+  end
+
+  describe "DELETE destroy" do
+    before(:each) do
+       @request.env["devise.mapping"] = Devise.mappings[:user]
+       user = FactoryBot.create(:user)
+       sign_in user
+    end
+    it "deletes the topic" do
+      delete :destroy, params: { id: my_topic.id }
+      count = Topic.where({id: my_topic.id}).size
+      expect(count).to eq 0
+    end
+
+    it "redirects to topics index" do
+      delete :destroy, params: { id: my_topic.id }
+      expect(response).to redirect_to topics_path
+    end
+  end
 end
