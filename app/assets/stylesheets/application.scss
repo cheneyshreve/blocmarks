@@ -17,11 +17,19 @@
  @import "bootstrap";
 
 .well {
-  width: 225px;
-  height: 225px;
+  width: 250px;
+  height: 240px;
   display: inline-block;
   background-color: black;
-  opacity:0.75;
+  opacity:0.95;
   color: white;
   font-style: bold;
+}
+
+.btn.btn-success {
+  margin: 5px 5px;
+}
+
+.btn.btn-danger {
+  margin: 5px 5px;
 }
