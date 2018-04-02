@@ -29,6 +29,7 @@ gem 'thor', '0.19.1'
 gem 'figaro'
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'embedly', '~> 1.9.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
