@@ -1,2 +1,8 @@
-<h1>Bookmarks#edit</h1>
-<p>Find me in app/views/bookmarks/edit.html.erb</p>
+<div class="row">
+  <div class="col-md-8">
+    <h2>Edit Bookmark</h2>
+      <div class="col-md-8">
+        <%= render partial: 'form', locals: { bookmark: @bookmark } %>
+      </div>
+  </div>
+</div>
