@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  # get 'topics/index'
-  # get 'topics/show'
-  # get 'topics/new'
-  # get 'topics/edit'
+  get 'bookmarks/show'
+
+  get 'bookmarks/new'
+
+  get 'bookmarks/edit'
+
   resources :topics do
     resources :bookmarks
   end
+
+  resources :bookmarks, except: [:index]
 
   devise_for :users
   resources :users
