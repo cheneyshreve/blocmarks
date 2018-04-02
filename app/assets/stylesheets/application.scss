@@ -16,8 +16,12 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-.thumbnail {
-  max-width: 20%;
-  display: inline;
-  margin: 10px auto;
+.well {
+  width: 225px;
+  height: 225px;
+  display: inline-block;
+  background-color: black;
+  opacity:0.75;
+  color: white;
+  font-style: bold;
 }

@@ -6,9 +6,9 @@
             <%= link_to topic.title, topic %>
             <h4 class="media-heading">
               <% topic.bookmarks.each do |bookmark| %>
-                <div class="thumbnail">
-                  <%= bookmark.url %>
-                </div>
+              <div class="well">
+                <%= render partial: 'bookmarks/thumbnail', locals: { bookmark: bookmark } %>
+              </div>  
               <% end %>
             </h4>
       <% end %>
