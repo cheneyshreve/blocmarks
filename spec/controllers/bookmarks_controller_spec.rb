@@ -42,7 +42,7 @@ RSpec.describe BookmarksController, type: :controller do
        sign_in user
     end
     it "returns http success" do
-      get :edit, params: { id: bookmark.id }
+      get :edit, params: { topic_id: bookmark.topic_id, id: bookmark.id }
       expect(response).to have_http_status(:success)
     end
   end

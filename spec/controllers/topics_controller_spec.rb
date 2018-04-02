@@ -17,7 +17,7 @@ RSpec.describe TopicsController, type: :controller do
     end
 
     it "assigns topics to @topics" do
-      get :index
+      get :index, params: { id: my_topic.id }
       expect(assigns(:topics)).to eq([my_topic])
     end
   end
