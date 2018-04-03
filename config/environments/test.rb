@@ -28,22 +28,20 @@ Rails.application.configure do
   # Disable request forgery protection in test environment.
  config.action_controller.allow_forgery_protection = false
  config.action_mailer.perform_caching = false
- config.action_mailer.perform_deliveries = false
 
-
- config.action_mailer.delivery_method = :test
+ # ActionMailer config
  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
- config.action_mailer.default_options = { from: "shedevsnow@gmail.com" }
-   config.action_mailer.smtp_settings = {
-   address: "smtp.gmail.com",
-   port: 25,
-   authentication: "plain",
-   enable_starttls_auto: true,
-   user_name: ENV['GMAIL_USERNAME'],
-   password: ENV['GMAIL_PASSWORD'],
-   domain: ENV['DOMAIN_NAME'],
-   openssl_verify_mode: 'none',
-   }
+
+ config.action_mailer.delivery_method = :smtp
+ config.action_mailer.smtp_settings = {
+   port:              587,
+   address:           'smtp.mailgun.org',
+   user_name:         ENV['MAILGUN_SMTP_LOGIN'],
+   password:          ENV['MAILGUN_SMTP_PASSWORD'],
+   domain:            'sandbox7a1fbcc4961a479788fa20a41f7a00f9.mailgun.org',
+   authentication:    :plain,
+   content_type:      'text/html'
+ }
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr

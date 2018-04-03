@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'bookmarks/edit'
 
+  post :incoming, to: 'incoming#create'
+  
   resources :topics do
     resources :bookmarks
   end

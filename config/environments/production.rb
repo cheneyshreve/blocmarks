@@ -87,18 +87,18 @@ Rails.application.configure do
   end
 
   # ActionMailer Config
-   config.action_mailer.default_url_options = { :host => 'https://fierce-peak-50187.herokuapp.com'}
-
-   ActionMailer::Base.delivery_method = :smtp
-   ActionMailer::Base.smtp_settings = {
-     address:              'smtp.sendgrid.net',
-     port:                 "25",
-     domain:               'heroku.com',
-     user_name:            ENV["SENDGRID_USERNAME"],
-     password:             ENV["SENDGRID_PASSWORD"],
-     authentication:       'plain',
-     enable_starttls_auto: true
-   }
+   config.action_mailer.default_url_options = { :host =>  'https://www.fierce-peak-50187.herokuapp.com'}
+   #
+   # ActionMailer::Base.delivery_method = :smtp
+   # ActionMailer::Base.smtp_settings = {
+   #   address:              'smtp.sendgrid.net',
+   #   port:                 "25",
+   #   domain:               'heroku.com',
+   #   user_name:            ENV["SENDGRID_USERNAME"],
+   #   password:             ENV["SENDGRID_PASSWORD"],
+   #   authentication:       'plain',
+   #   enable_starttls_auto: true
+   # }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
