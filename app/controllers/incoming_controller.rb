@@ -20,9 +20,11 @@ class IncomingController < ApplicationController
 
     if @topic.nil?
       @topic = Topic.create(title: params[:subject], user_id: @user)
+      @topic.save!
     end
 
     @bookmark = @topic.bookmarks.create(url: @url, user_id: @user.id)
+
 
     head 200
   end
