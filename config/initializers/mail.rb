@@ -1,12 +1,14 @@
 ActionMailer::Base.smtp_settings = {
-  :port           => ENV['MAILGUN_SMTP_PORT'],
-  :address        => ENV['MAILGUN_SMTP_SERVER'],
-  :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-  :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-  :domain         => 'fierce-peak-50187.herokuapp.com',
-  :authentication => :plain,
+  port:              587,
+  address:           'smtp.mailgun.org',
+  user_name:         ENV['MAILGUN_SMTP_LOGIN'],
+  password:          ENV['MAILGUN_SMTP_PASSWORD'],
+  domain:            ENV['MAILGUN_DOMAIN'],
+  authentication:    :plain,
+  content_type:      'text/html'
 }
 ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.raise_delivery_errors = true
 
 class DevelopmentMailInterceptor
   def self.delivering_email(message)
