@@ -1,7 +1,7 @@
 class IncomingController < ApplicationController
 
-  skip_before_action :verify_authenticity_token, only: [:create]
-  # skip_before_action :authenticate_user!, only: [:create]
+  skip_before_action :verify_authenticity_token, only: [:create], if: :json_request?
+
 
   def create
     byebug
@@ -27,5 +27,9 @@ class IncomingController < ApplicationController
     @bookmark.save!
 
     head 200
+  end
+  protected
+  def json_request?
+    request.format.json?
   end
 end
