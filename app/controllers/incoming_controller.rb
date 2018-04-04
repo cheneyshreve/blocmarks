@@ -1,7 +1,7 @@
 class IncomingController < ApplicationController
 
-  skip_before_action :verify_authenticity_token, only: [:create]
-  
+  skip_before_action :verify_authenticity_token
+
   def create
     byebug
     @user =  User.find_by(email: params[:sender])
