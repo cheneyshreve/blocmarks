@@ -17,7 +17,8 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topic_params)
-    @topic.user = current_user
+    @topic.user = User.find_by(params[:email])
+    # @topic.user = current_user
 
     if @topic.save
       redirect_to @topic, notice: "Topic was saved successfully!"
