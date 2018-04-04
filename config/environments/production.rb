@@ -87,7 +87,7 @@ Rails.application.configure do
   end
 
   # ActionMailer Config
-   config.action_mailer.default_url_options = { :host =>  'https://www.fierce-peak-50187.herokuapp.com'}
+   config.action_mailer.default_url_options = { :host =>  'https://fierce-peak-50187.herokuapp.com'}
 
    # ActionMailer::Base.delivery_method = :smtp
    # ActionMailer::Base.smtp_settings = {
