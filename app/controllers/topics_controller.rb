@@ -57,7 +57,7 @@ end
 
 private
 def topic_params
-  params.require(:topic).permit(:title,:user)
+  params.require(:topic).permit(:title,:user, :user_id)
 end
 
 end
