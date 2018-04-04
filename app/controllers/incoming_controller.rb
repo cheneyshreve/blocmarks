@@ -1,6 +1,7 @@
 class IncomingController < ApplicationController
 
   skip_before_action :verify_authenticity_token, only: [:create]
+  skip_before_action :authenticate_user!, only: [:create]
   def create
     byebug
     @user =  User.find_by(email: params[:sender])
@@ -18,10 +19,11 @@ class IncomingController < ApplicationController
 
     if @topic.nil?
       @topic = Topic.create!(title: params[:subject], user_id: @user)
+      @topic.save!
     end
 
     @bookmark = @topic.bookmarks.create!(url: @url, user_id: @user.id)
-
+    @bookmark.save!
 
     head 200
   end
