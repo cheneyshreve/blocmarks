@@ -7,8 +7,6 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @bookmarks = @topic.bookmarks
-    @bookmark = Bookmark.new
   end
 
   def new
@@ -18,7 +16,6 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
     @topic.user = User.find_by(params[:email]) || current_user
-    puts "user: #{@topic.user}"
     # @topic.user = current_user
 
     if @topic.save
