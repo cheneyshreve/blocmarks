@@ -5,7 +5,7 @@ ActionMailer::Base.smtp_settings = {
   password:          ENV['MAILGUN_SMTP_PASSWORD'],
   domain:            'fierce-peak-50187.herokuapp.com',
   authentication:    :plain,
-  content_type: 'application/json'
+  content_type: 'text/html'
 }
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.raise_delivery_errors = true
