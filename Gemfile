@@ -29,7 +29,8 @@ gem 'thor', '0.19.1'
 gem 'figaro'
 gem 'devise'
 gem 'bootstrap-sass'
-
+gem 'pundit'
+gem 'byebug'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -42,11 +43,9 @@ group :production do
   # Use pg as the production database for Active Record
   gem 'pg', '~> 0.20'
   gem 'rails_12factor'
-  gem 'byebug'
 end
 
 group :development, :test do
-  gem 'byebug'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'listen'
