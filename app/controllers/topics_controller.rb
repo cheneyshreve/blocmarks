@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :authenticate_user!
+  after_action :verify_authorized, except: :index
 
   def index
     @topics = Topic.all
@@ -7,15 +8,18 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    authorize @topic
   end
 
   def new
     @topic = Topic.new
+    authorize @topic
   end
 
   def create
     @topic = Topic.new(topic_params)
     @topic.user = User.find_by(params[:email]) || current_user
+    authorize @topic
     # @topic.user = current_user
 
     if @topic.save
@@ -28,11 +32,13 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
+    authorize @topic
   end
 
   def update
     @topic = Topic.find(params[:id])
     @topic.assign_attributes(topic_params)
+    authorize @topic
 
     if @topic.save
       flash[:notice] = "Topic was updated."
@@ -45,6 +51,7 @@ class TopicsController < ApplicationController
 
 def destroy
   @topic = Topic.find(params[:id])
+  authorize @topic
 
   if @topic.destroy
     flash[:notice] = "\"#{@topic.title}\" was deleted successfully."

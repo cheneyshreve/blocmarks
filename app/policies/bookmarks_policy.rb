@@ -1,2 +1,0 @@
-class BookmarksPolic < ApplicationPolicy
-end
