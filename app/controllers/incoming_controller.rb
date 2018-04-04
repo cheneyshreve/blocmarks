@@ -13,16 +13,16 @@ class IncomingController < ApplicationController
     @url = params["body-plain"]
 
     if @user.nil?
-      @user = User.create(email: params[:sender], password: 'password')
+      @user = User.create!(email: params[:sender], password: 'password')
       @user.skip_confirmation!
       @user.save!
     end
 
     if @topic.nil?
-      @topic = Topic.create(title: params[:subject], user_id: @user)
+      @topic = Topic.create!(title: params[:subject], user_id: @user)
     end
 
-    @bookmark = @topic.bookmarks.create(url: @url, user_id: @user.id)
+    @bookmark = @topic.bookmarks.create!(url: @url, user_id: @user.id)
 
 
     head 200
