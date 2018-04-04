@@ -13,7 +13,7 @@ class IncomingController < ApplicationController
     @url = params["body-plain"]
 
     if @user.nil?
-      @user = User.create(email: params[:sender], password: 'TemporaryPassword')
+      @user = User.create(email: params[:sender], password: 'password')
       @user.skip_confirmation!
       @user.save!
     end
