@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :authenticate_user!
+   before_action :authenticate_user!
 
   def index
     @topics = Topic.all
@@ -17,7 +17,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topic_params)
-    @topic.user = User.find_by(params[:email])
+    @topic.user = User.find_by(params[:email]) || current_user
     # @topic.user = current_user
 
     if @topic.save
