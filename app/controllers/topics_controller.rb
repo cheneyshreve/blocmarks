@@ -18,6 +18,7 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
     @topic.user = User.find_by(params[:email]) || current_user
+    puts "user: #{@topic.user}"
     # @topic.user = current_user
 
     if @topic.save
