@@ -30,3 +30,63 @@
 .btn {
   margin: 5px 5px;
 }
+
+.jumbotron-about {
+  background-image: url(/assets/antonio-dicaterina.jpg);
+  background-size: cover;
+  background-color: rgba(238, 238, 238, 0.75);
+  border-radius: 6px 6px;
+  background-position: center;
+  padding: 10px;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+.jumbotron-index {
+  background-image: url(/assets/collin-armstrong.jpg);
+  background-size: cover;
+  background-color: rgba(238, 238, 238, 0.75);
+  background-position: center;
+  border-radius: 6px 6px;
+  padding: 10px;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.jumbotron-index h1,  h1 .jumbotron-index {
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 2px black;
+}
+.jumbotron-index h3,  h3 .jumbotron-index {
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 2px black;
+}
+
+.jumbotron-index li {
+  color: white;
+  font-weight: bold;
+  size: 1.5rem;
+}
+
+.jumbotron-about h1, h1 .jumbotron-about {
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 2px black;
+}
+
+.jumbotron-about p {
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 2px black;
+  font-size: 1.5rem;
+}
+
+.jumbotron-about a {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: 1px 2px black;
+
+}
