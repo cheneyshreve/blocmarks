@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-8">
+    <h3>My Blocmarks</h3>
+      <% @user_bookmarks.each do |bookmark| %>
+        <div class="well">
+          <%= render partial: 'bookmarks/thumbnail', locals: { bookmark: bookmark } %>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <h3>Liked Bookmarks</h3>
+      <% @liked_bookmarks.each do |like| %>
+        <div class="well bookmark_box">
+          <%= render partial: 'bookmarks/thumbnail', locals: { bookmark: like.bookmark } %>
+        </div>
+        <div>
+          <%= render partial: 'likes/like', locals: { bookmark: like.bookmark } %>
+        </div>
+      <% end %>
+   </div>
+</div>

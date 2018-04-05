@@ -14,6 +14,10 @@
         <li><%= link_to "Home", welcome_index_path %></li>
         <li><%= link_to "About", welcome_about_path %></li>
         <li><%= link_to "Topics", topics_path %></li>
+        <% if current_user %>
+          <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <li class="pull-right"><%= link_to "My Homepage", user_path(current_user) %></li>
+        <% end %>
       </ul>
 
       <% if flash[:notice] %>
