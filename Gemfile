@@ -55,4 +55,5 @@ group :development, :test do
   gem 'faker'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'factory_bot_rails'
+  gem 'pundit-matchers', '~> 1.4.1'
 end

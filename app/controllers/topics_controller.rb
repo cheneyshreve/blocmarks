@@ -4,6 +4,7 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.all
+    @bookmarks = Bookmark.all
   end
 
   def show
@@ -20,7 +21,6 @@ class TopicsController < ApplicationController
     @topic = Topic.new(topic_params)
     @topic.user = User.find_by(params[:email]) || current_user
     authorize @topic
-    # @topic.user = current_user
 
     if @topic.save
       redirect_to @topic, notice: "Topic was saved successfully!"

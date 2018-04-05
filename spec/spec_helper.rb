@@ -17,6 +17,8 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'devise'
 require 'shoulda-matchers'
+require 'pundit/rspec'
+require 'pundit/matchers'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

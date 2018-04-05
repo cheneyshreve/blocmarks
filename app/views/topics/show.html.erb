@@ -27,7 +27,11 @@
             <% if policy(bookmark).destroy? %>
                 <%= link_to "Delete", [@topic,bookmark], method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this bookmark?' }  %>
             <% end %>
-
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                 <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
+              </div>
             </div>
         <% end %>
         <div class="row">

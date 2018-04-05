@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/index'
+
   get 'bookmarks/show'
 
   get 'bookmarks/new'
@@ -6,12 +8,14 @@ Rails.application.routes.draw do
   get 'bookmarks/edit'
 
   post :incoming, to: 'incoming#create'
-  
+
   resources :topics do
     resources :bookmarks
   end
 
-  resources :bookmarks, except: [:index]
+  resources :bookmarks, except: [:index] do
+    resources :likes, only: [:index, :create, :destroy]
+  end
 
   devise_for :users
   resources :users
