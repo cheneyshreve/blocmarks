@@ -18,7 +18,7 @@ class IncomingController < ApplicationController
     end
 
     if @topic.nil?
-      @topic = Topic.create!(title: params[:subject], user_id: @user)
+      @topic = Topic.create!(title: params[:subject], user_id: @user.id)
       @topic.save!
     end
 

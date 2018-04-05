@@ -5,7 +5,6 @@ RSpec.describe BookmarksController, type: :controller do
   let(:topic) { Topic.create!(user: user, title: "topic title") }
   let(:bookmark) {Bookmark.create!(topic: topic, user: user, url: "fancyurl.com") }
 
-
   describe "GET #show" do
     before(:each) do
        @request.env["devise.mapping"] = Devise.mappings[:user]
