@@ -1,7 +1,5 @@
 class LikesController < ApplicationController
   before_action :set_topic
-  before_action :set_bookmark
-
   after_action :verify_authorized
 
   def index
@@ -38,10 +36,8 @@ class LikesController < ApplicationController
 
   private
   def set_topic
-    @topic = Topic.find(params[:topic_id])
+    @bookmark = Bookmark.find(params[:bookmark_id])
+    @topic = @bookmark.topic
   end
 
-  def set_bookmark
-    @bookmark = @topic.bookmarks.find(params[:bookmark_id])
-  end
 end
