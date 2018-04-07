@@ -1,7 +1,9 @@
 class LikesController < ApplicationController
+  before_action :set_topic
+  before_action :set_bookmark
 
   after_action :verify_authorized
-  
+
   def index
     @bookmarks = Bookmark.all
   end
@@ -15,7 +17,7 @@ class LikesController < ApplicationController
        flash[:notice] = "Your like has been saved."
        redirect_to @bookmark
     else
-       flash[:alert] = "There was a problem saving your like, please try agian."
+       flash[:alert] = "There was a problem saving your like, please try again."
        redirect_to @bookmark
     end
   end
@@ -32,5 +34,14 @@ class LikesController < ApplicationController
        flash[:alert] = "There was a problem unliking your like, please try again."
        redirect_to @bookmark
     end
+  end
+
+  private
+  def set_topic
+    @topic = Topic.find(params[:topic_id])
+  end
+
+  def set_bookmark
+    @bookmark = @topic.bookmarks.find(params[:bookmark_id])
   end
 end
