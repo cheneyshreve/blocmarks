@@ -10,8 +10,6 @@ Rails.application.routes.draw do
     resources :likes, only: [:index, :create, :destroy]
   end
 
-  resources :likes, only: [:index]
-
   devise_for :users
 
   resources :users, only: [:show]
