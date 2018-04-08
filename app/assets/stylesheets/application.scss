@@ -39,7 +39,7 @@
   background-position: center;
   padding: 10px;
   z-index: 1;
-  opacity: 0.95;
+  opacity: 0.75;
 }
 
 .jumbotron-index {
@@ -50,24 +50,25 @@
   border-radius: 6px 6px;
   padding: 10px;
   z-index: 1;
-  opacity: 0.85;
+  opacity: 0.75;
 }
 
 .jumbotron-index h1,  h1 .jumbotron-index {
-  color: white;
+  color: aqua;
   font-weight: bold;
   text-shadow: 1px 2px black;
 }
 .jumbotron-index h3,  h3 .jumbotron-index {
-  color: white;
+  color: aqua;
   font-weight: bold;
   text-shadow: 1px 2px black;
 }
 
 .jumbotron-index li {
-  color: white;
+  color: aqua;
   font-weight: bold;
   size: 1.5rem;
+  text-shadow: 1px 2px black;
 }
 
 .jumbotron-about h1, h1 .jumbotron-about {
