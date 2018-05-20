@@ -45,9 +45,12 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :development do
+  gem 'web-console', '~> 2.0'
+end
+
 group :development, :test do
   gem 'sqlite3'
-  gem 'web-console', '~> 2.0'
   gem 'listen'
   gem 'rspec-rails', '~> 3.7'
   gem 'rails-controller-testing'
