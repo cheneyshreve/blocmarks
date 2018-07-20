@@ -3,8 +3,7 @@ Blocmarks is an social bookmarking application that allows users to create and e
 
 Visit the live version on [Heroku](https://fierce-peak-50187.herokuapp.com/).
 Or check out this demo
-![alt text](https://github.com/cheneyshreve/app/assets/images/bookmarks_demo.gif)
-å
+![alt text](https://raw.githubusercontent.com/cheneyshreve/blocmarks/master/app/assets/images/bookmarks_demo.gif)
 
 ## Setup & Configuration
 Languages and frameworks
