@@ -1,7 +1,7 @@
 <%= form_for [@topic,bookmark] do |f| %>
    <div class="form-group">
      <%= f.label :url %>
-     <%= f.text_field :url, class: 'form-control', placeholder: "Enter bookmark url here" %>
+     <%= f.text_field :url, class: 'form-control', placeholder: "Enter url here without the http, example: bbc.com or geekwire.com" %>
    </div>
 
    <div class="form-group">

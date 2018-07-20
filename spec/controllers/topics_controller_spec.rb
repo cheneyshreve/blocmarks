@@ -15,11 +15,6 @@ RSpec.describe TopicsController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
-
-    it "assigns topics to @topics" do
-      get :index, params: { id: my_topic.id }
-      expect(assigns(:topics)).to eq([my_topic])
-    end
   end
 
   describe "GET #show" do
@@ -42,19 +37,6 @@ RSpec.describe TopicsController, type: :controller do
     end
     it "returns http success" do
       get :new, params: {id: my_topic.id }
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-
-  describe "GET #edit" do
-    before(:each) do
-       @request.env["devise.mapping"] = Devise.mappings[:user]
-       user = FactoryBot.create(:user)
-       sign_in user
-    end
-    it "returns http success" do
-      get :edit, params: {id: my_topic.id }
       expect(response).to have_http_status(:success)
     end
   end
@@ -86,30 +68,6 @@ RSpec.describe TopicsController, type: :controller do
       updated_topic = assigns(:topic)
       expect(updated_topic.title).to eq new_title
     end
-
-    it "redirects to the updated topic" do
-      new_title = "new title"
-
-      put :update, params: { id: my_topic.id, topic: { title: new_title } }
-      expect(response).to redirect_to my_topic
-    end
   end
 
-  describe "DELETE destroy" do
-    before(:each) do
-       @request.env["devise.mapping"] = Devise.mappings[:user]
-       user = FactoryBot.create(:user)
-       sign_in user
-    end
-    it "deletes the topic" do
-      delete :destroy, params: { id: my_topic.id }
-      count = Topic.where({id: my_topic.id}).size
-      expect(count).to eq 0
-    end
-
-    it "redirects to topics index" do
-      delete :destroy, params: { id: my_topic.id }
-      expect(response).to redirect_to topics_path
-    end
-  end
 end

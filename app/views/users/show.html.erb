@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-8">
-    <h3>My Blocmarks</h3>
+    <h3>My Bookmarks</h3>
       <% @user_bookmarks.each do |bookmark| %>
         <div class="well">
           <%= render partial: 'bookmarks/thumbnail', locals: { bookmark: bookmark } %>

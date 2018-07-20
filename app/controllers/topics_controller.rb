@@ -26,7 +26,7 @@ class TopicsController < ApplicationController
       redirect_to @topic, notice: "Topic was saved successfully!"
     else
       flash.now[:alert] = "Error creating topic, please try again."
-      render :new
+      render topics_path
     end
   end
 
@@ -55,7 +55,11 @@ def destroy
 
   if @topic.destroy
     flash[:notice] = "\"#{@topic.title}\" was deleted successfully."
-    redirect_to action: :index
+    if !@bookmarks.nil?
+      redirect_to @bookmarks
+    else
+      redirect_to @bookmarks
+    end
   else
     flash.now[:alert] = "There was an error deleting the topic."
     render :show
