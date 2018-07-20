@@ -2,6 +2,9 @@
 Blocmarks is an social bookmarking application that allows users to create and edit public bookmarks, search other user's bookmarks, and manage their own. Additional features include the ability to populate new topics, bookmarks, and user accounts via email, however, this functionality is currently only enabled for verified users while I develop a custom domain for the app. Please contact me if you would like to be added as a verified user.  
 
 Visit the live version on [Heroku](https://fierce-peak-50187.herokuapp.com/).
+Or check out this demo
+![alt text](https://github.com/cheneyshreve/app/assets/images/bookmarks_demo.gif)
+å
 
 ## Setup & Configuration
 Languages and frameworks
